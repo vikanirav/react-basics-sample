@@ -1,13 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import App from "./components/defaultApp/App"; //Default import. You can change name of component at the time importing. i.e. App1
+import { App as MyApp } from "./components/MyApp/App"; // Named import. You can't change name of component at the time importing. i.e {App1}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      {/* <App /> */}
+      <MyApp />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
